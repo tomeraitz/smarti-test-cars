@@ -7,9 +7,9 @@
     <br />
     <br />
     <br />
-    <a href="https://gold-rush.netlify.app/">Go To Server Documentation</a>
+    <a href="https://github.com/tomeraitz/smarti-test-cars/tree/main/server">Go To Server Documentation</a>
     ·
-    <a href="https://github.com/tomeraitz/gold-rush-server/issues">Go To Client Documentation</a>
+    <a href="https://github.com/tomeraitz/smarti-test-cars/tree/main/client">Go To Client Documentation</a>
   </p>
 </p>
 
