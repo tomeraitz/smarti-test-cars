@@ -1,0 +1,50 @@
+<form>
+    <h1>{{formType}}</h1>
+    <div class="form-group">
+        <div class="form-group" *ngIf="formType === 'edit'">
+            <label for="select">Select Car To Edit</label>
+            <select  class="form-control" id="select" [(ngModel)]="selected" name="selected" (change)="onOptionsSelected()">
+                <option *ngFor="let car of cars" 
+                [value]="car.id" >
+                {{car.id}}
+            </option>
+            </select>
+     </div>
+      <label for="company">Company</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="company" 
+        placeholder={{companyPlaceholder}}  
+        [(ngModel)]="company"
+        (click)="$event.stopPropagation()"
+        name="company"/>
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="type" 
+            (click)="$event.stopPropagation()"
+            placeholder={{typePlaceholder}}
+            [(ngModel)]="type" 
+            name="type"/>
+      </div>
+      <div class="form-group">
+        <label for="color">Color</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            (click)="$event.stopPropagation()"
+            id="color" 
+            placeholder={{colorPlaceholder}}
+            [(ngModel)]="color" 
+            name="color"/>
+      </div>
+
+      <div class="button-container">
+        <button (click)="submit()" type="button" class="btn btn-primary">Submit</button>
+        <button (click)="appCloseForm()" type="button" class="btn btn-dark">Close</button>
+    </div>
+  </form>

@@ -1,0 +1,22 @@
+<div class="container" *ngIf="!from.isOpen">
+    <app-table (closePopup)="closePopup()"  [cars]="cars" (openPopup)="openPopup($event)"></app-table>
+    <div class="button-container">
+        <button type="button" (click)="openForm('create')" class="btn btn-primary">Create</button>
+        <button type="button" (click)="openForm('edit')" class="btn btn-dark" [disabled]="cars.length === 0 ? 'disabled': null">Edit</button>
+    </div>
+</div>
+<div class="popup" *ngIf="popup">
+    <app-popup 
+            [car]="car" 
+            (closePopup)="closePopup()" 
+            (deleteCar)="deleteCar($event)" >
+    </app-popup>
+</div>
+<div class="popup-form" *ngIf="checkIfCanOpenForm()">
+    <app-form 
+        (clickFormEvent)="clickFormEvent($event)" 
+        (closeForm)="closeForm()"
+        [formType]="from.formType"
+        [cars]="cars">
+    </app-form>
+</div>
